@@ -1,0 +1,15 @@
+MODEL:
+    N_CLASS: 10
+    SEQUENCE_LENGTH: 256
+
+PATH:
+    PHO_BERT: 'data/PhoBERT_base_fairseq'
+    PRETRAIN: 'data/checkpoint/latest_checkpoint.pt'
+    LABEL_ENCODE: 'data/labelEncoder.pkl'
+    X_ENCODE: 'data/X1.pkl'
+    Y_ENCODE: 'data/y1.pkl'
+TRAIN:
+    EPOCHS: 20
+    BATCH_SIZE: 8
+    FOLD: 4
+    LEARNING_RATE: 0.0002
