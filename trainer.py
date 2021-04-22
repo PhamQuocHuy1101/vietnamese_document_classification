@@ -25,6 +25,7 @@ from utils import *
 from models import ClassifierModel
 
 # Load data
+print("### Loading data")
 X = load_pkl(config.PATH['X_ENCODE'])
 y = load_pkl(config.PATH['Y_ENCODE'])
 
@@ -32,6 +33,7 @@ y = load_pkl(config.PATH['Y_ENCODE'])
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Define model
+print("### Loading model")
 classifier = ClassifierModel(device = DEVICE)
 model = classifier.bert_model
 
@@ -43,8 +45,8 @@ for child in model.children():
 for param in model._modules['model']._modules['classification_heads']._modules['new_task'].parameters():
     param.requires_grad = True           
 
-EPOCHS = config.TRAIN['EPOCH']
-BATCH_SIZE = config.TRAIN['BACTH_SIZE']
+EPOCHS = config.TRAIN['EPOCHS']
+BATCH_SIZE = config.TRAIN['BATCH_SIZE']
 FOLD = config.TRAIN['FOLD']
 LR = config.TRAIN['LEARNING_RATE']
 
