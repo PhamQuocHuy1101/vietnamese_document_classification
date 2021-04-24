@@ -1,0 +1,7 @@
+torch==1.7.0
+tqdm==4.50.2
+numpy==1.19.2
+fairseq==0.10.2
+transformers==4.4.2
+PyYAML==5.4.1
+scikit_learn==0.24.1

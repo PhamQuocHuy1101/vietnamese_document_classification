@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
         print("Loading model...")
         import prediction
-        label = prediction.predict(test_file_path)
+        label = prediction.predict_from_file(test_file_path)
         print("Label: ", label)
     elif mode == 'train':
         import trainer
